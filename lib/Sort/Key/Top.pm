@@ -1,6 +1,6 @@
 package Sort::Key::Top;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use strict;
 use warnings;
@@ -28,6 +28,46 @@ our @EXPORT_OK = qw( top
                      rnkeytop
                      rikeytop
                      rukeytop
+                     part
+                     lpart
+                     npart
+                     ipart
+                     upart
+                     rpart
+                     rlpart
+                     rnpart
+                     ripart
+                     rupart
+                     keypart
+                     lkeypart
+                     nkeypart
+                     ikeypart
+                     ukeypart
+                     rkeypart
+                     rlkeypart
+                     rnkeypart
+                     rikeypart
+                     rukeypart
+                     partref
+                     lpartref
+                     npartref
+                     ipartref
+                     upartref
+                     rpartref
+                     rlpartref
+                     rnpartref
+                     ripartref
+                     rupartref
+                     keypartref
+                     lkeypartref
+                     nkeypartref
+                     ikeypartref
+                     ukeypartref
+                     rkeypartref
+                     rlkeypartref
+                     rnkeypartref
+                     rikeypartref
+                     rukeypartref
                      topsort
                      ltopsort
                      ntopsort
@@ -293,7 +333,20 @@ numerical descending order but converting the keys to unsigned integers first
 
 Note that for the atpos set of functions indexes start at zero.
 
+=item - return a list composed by the elements with the first n
+ordered keys and then the remaining ones.
+
+  ikeypart { length $_ } 3 => qw(a bbbb cc ddddd g fd);
+      # ==> a cc g bbbb ddddd fd
+
+=item - return two arrays references, the first array containing the
+elements with the first n ordered keys and the second with the rest.
+
+  keypartref { length $_ } 3 => qw(a bbbb cc ddddd g fd);
+      # ==> [a cc g] [bbbb ddddd fd]
+
 =back
+
 
 The full list of available functions is:
 
@@ -320,6 +373,13 @@ The full list of available functions is:
   ruatpos keyatpos lkeyatpos nkeyatpos ikeyatpos ukeyatpos rkeyatpos
   rlkeyatpos rnkeyatpos rikeyatpos rukeyatpos
 
+  part lpart npart ipart upart rpart rlpart rnpart ripart
+  rupart
+
+  keypart lkeypart nkeypart ikeypart ukeypart rkeypart
+  rlkeypart rnkeypart rikeypart rukeypart
+
+
 =head1 SEE ALSO
 
 L<Sort::Key>, L<perlfunc/sort>.
@@ -329,7 +389,7 @@ L<http://en.wikipedia.org/wiki/Selection_algorithm>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2006-2008 by Salvador FandiE<ntilde>o
+Copyright (C) 2006-2008, 2011 by Salvador FandiE<ntilde>o
 (sfandino@yahoo.com).
 
 This library is free software; you can redistribute it and/or modify
