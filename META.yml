@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Sort-Key-Top
-version:            0.05
+version:            0.06
 abstract:           select and sort top n elements
 author:
     - Salvador Fandino <sfandino@yahoo.com>
